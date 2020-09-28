@@ -1,0 +1,14 @@
+package com.jbk.testcases;
+
+import com.jbk.pages.HomePage;
+import com.jbk.utilities.TestBase;
+
+public class HomePageTestCases extends TestBase {
+
+	HomePage homepage;
+	
+	public HomePageTestCases()
+	{
+		super();
+	}
+}

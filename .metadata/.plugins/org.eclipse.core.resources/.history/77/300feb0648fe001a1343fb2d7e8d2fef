@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+  <parameter name = "fileName" value="PrimeShop.xlsx"></parameter>
+    <parameter name = "sheetName" value="Sheet1"></parameter>
+  <classes>
+  <class name ="com.jbk.utilities.DataProviderWithExcel"></class>
+  </classes>
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->

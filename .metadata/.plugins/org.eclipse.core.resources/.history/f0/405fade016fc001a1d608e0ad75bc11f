@@ -1,0 +1,54 @@
+package com.jbk.pages;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import com.jbk.repository.HomePageRepository;
+
+public class HomePage extends HomePageRepository {
+
+	public WebDriver driver;
+	static String filename = null;
+	static String sheetname = null;
+	
+	public HomePage(WebDriver driver)
+	{
+		this.driver= driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public static void getExcelfromProperties() {
+		filename = System.getProperty("user.dir") +"/src/main/resources/PrimeShop.xlsx";
+		sheetname = "CheckServices";
+	}
+	
+	public boolean checkServices()
+	{
+		
+		ArrayList<String> alExpected = new ArrayList<String>();
+		System.out.println("alExpected:"+alExpected);
+		
+		ArrayList<String> actList = new ArrayList<String>();
+		for (WebElement element : services)
+		{
+			actList.add(element.getText());
+		}
+		System.out.println("actList" + actList);
+		System.out.println(actList.size() + " actList " + alExpected.size());
+
+		for (int i = 0; i < alExpected.size(); i++) {
+			if (alExpected.get(i).equals(actList.get(i))) {
+				System.out.println("List is match..");
+				return true;
+			} else {
+				System.out.println("List is not match..");
+				return false;
+			}
+		}
+		return false;
+	}
+	}
+}

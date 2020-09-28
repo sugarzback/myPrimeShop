@@ -1,0 +1,13 @@
+package com.jbk.testcases;
+
+import com.jbk.pages.HomePage;
+
+public class HomePageTestCases {
+
+	HomePage homepage;
+	
+	public HomePageTestCases()
+	{
+		super();
+	}
+}
